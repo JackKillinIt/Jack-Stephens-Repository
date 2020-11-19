@@ -1,0 +1,221 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMz00Qm+urHxHLLjYf0BDtC",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JackKillinIt/Jack-Stephens-Repository/blob/master/Jack's%20Week%2012%20Assignment\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "34H57udDVOU0",
+        "outputId": "c1f9cecf-02ca-4001-cacf-492face17031"
+      },
+      "source": [
+        "#Program One \n",
+        "import pandas\n",
+        "\n",
+        "file_name = \"https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv\"\n",
+        "state_data = pandas.read_csv(file_name)\n",
+        "\n",
+        "med_pop = state_data[\"Pop\"].median()\n",
+        "\n",
+        "med_pop_row = state_data[ state_data[\"Pop\"]== med_pop]\n",
+        "\n",
+        "state_data.median()"
+      ],
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Area      56276.0\n",
+              "Pop     3294394.0\n",
+              "dtype: float64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 204
+        },
+        "id": "LflpcKS8gGas",
+        "outputId": "11de8ffe-8498-4bf1-df2a-d98ae25af4e3"
+      },
+      "source": [
+        "#Program Three\n",
+        "import pandas \n",
+        "\n",
+        "file_name = \"https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv\"\n",
+        "state_data = pandas.read_csv(file_name)\n",
+        "\n",
+        "state_data[\"Pop density\"] = state_data[\"Pop\"] / state_data[\"Area\"]\n",
+        "\n",
+        "state_data.head()"
+      ],
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Name</th>\n",
+              "      <th>State</th>\n",
+              "      <th>Area</th>\n",
+              "      <th>Pop</th>\n",
+              "      <th>Pop density</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Alabama</td>\n",
+              "      <td>AL</td>\n",
+              "      <td>52423</td>\n",
+              "      <td>4040587</td>\n",
+              "      <td>77.076608</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Alaska</td>\n",
+              "      <td>AK</td>\n",
+              "      <td>656424</td>\n",
+              "      <td>550043</td>\n",
+              "      <td>0.837939</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Arizona</td>\n",
+              "      <td>AZ</td>\n",
+              "      <td>114006</td>\n",
+              "      <td>3665228</td>\n",
+              "      <td>32.149431</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Arkansas</td>\n",
+              "      <td>AR</td>\n",
+              "      <td>53182</td>\n",
+              "      <td>2350725</td>\n",
+              "      <td>44.201516</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>California</td>\n",
+              "      <td>CA</td>\n",
+              "      <td>163707</td>\n",
+              "      <td>29769021</td>\n",
+              "      <td>181.843299</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "         Name State    Area       Pop  Pop density\n",
+              "0     Alabama    AL   52423   4040587    77.076608\n",
+              "1      Alaska    AK  656424    550043     0.837939\n",
+              "2     Arizona    AZ  114006   3665228    32.149431\n",
+              "3    Arkansas    AR   53182   2350725    44.201516\n",
+              "4  California    CA  163707  29769021   181.843299"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8SO-UTFIg5SS",
+        "outputId": "c62c7900-07ba-4c9e-edb4-fb70a64cebdf"
+      },
+      "source": [
+        "import pandas\n",
+        "\n",
+        "file_name = \"https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv\"\n",
+        "state_data = pandas.read_csv(file_name)\n",
+        "\n",
+        "state_data[\"Pop density\"] = state_data[\"Pop\"] / state_data[\"Area\"]\n",
+        "\n",
+        "state_data.max()\n",
+        "state_data.min()\n",
+        "state_data.median()"
+      ],
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Area           5.627600e+04\n",
+              "Pop            3.294394e+06\n",
+              "Pop density    7.468464e+01\n",
+              "dtype: float64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 18
+        }
+      ]
+    }
+  ]
+}
